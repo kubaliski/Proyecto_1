@@ -84,4 +84,34 @@
         <line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2"/>
         <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/>
     </symbol>
+
+    <!--Newsletter -->
+    <symbol id="send" viewBox="0 0 24 24" fill="none">
+        <line x1="22" y1="2" x2="11" y2="13" stroke="currentColor" stroke-width="2"/>
+        <polygon points="22 2 15 22 11 13 2 9 22 2" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <!--Footer-->
+    <symbol id="facebook" viewBox="0 0 24 24" fill="none">
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+
+   <symbol id="bluesky" viewBox="-4 -4 32 32" fill="none">
+        <path d="M7.44 6.43c-2.07-1.5-5.42-2.66-5.42 1.03c0 0.74 0.44 6.19 0.7 7.08c0.89 3.08 3.91 3.44 6.82 2.96c-5.06 0.83-6.11 4.01-3.33 6.76c1.29 1.27 2.39 2 3.33 2c2.5 0 3.92-3.46 4.38-4.38c0.42-0.83 0.63-1.46 0.63-1.88c0 0.42 0.21 1.04 0.63 1.88c0.46 0.91 1.88 4.38 4.38 4.38c0.94 0 2.05-0.71 3.33-2c2.78-2.75 1.73-5.93-3.33-6.76c2.89 0.48 5.91 0.12 6.82-2.96c0.26-0.89 0.7-6.34 0.7-7.08c0-3.69-3.35-2.53-5.42-1.03c-2.87 2.07-6.13 6.34-7.11 8.57c-1.13-2.26-4.24-6.49-7.11-8.57z"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="instagram" viewBox="0 0 24 24" fill="none">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2"/>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="currentColor" stroke-width="2"/>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+
+    <symbol id="youtube" viewBox="0 0 24 24" fill="none">
+        <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" stroke="currentColor" stroke-width="2"/>
+        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" stroke="currentColor" stroke-width="2"/>
+    </symbol>
 </svg>
+
