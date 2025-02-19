@@ -3,6 +3,7 @@
     --secondary-color: #1B2C41;
     --text-color: #2D3748;
     --background-color: #F5F1E8;
+    --border-color: #e2e8f0;
 }
 
 * {
@@ -42,6 +43,19 @@ header {
     gap: 48px;
 }
 
+.menu-button {
+    padding: 8px;
+    background: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: none;
+}
+
+.menu-button:hover {
+    background-color: var(--background-color);
+}
+
 .logo {
     font-size: 24px;
     font-family: serif;
@@ -78,7 +92,8 @@ nav ul li a:hover {
 .search-input {
     width: 256px;
     padding: 8px 12px;
-    border: 1px solid #e2e8f0;
+    padding-right: 32px;
+    border: 1px solid var(--border-color);
     border-radius: 8px;
 }
 
@@ -87,8 +102,19 @@ nav ul li a:hover {
     border-color: var(--primary-color);
 }
 
+.search-icon {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    stroke: #9CA3AF;
+    pointer-events: none;
+}
+
 .mobile-search {
     display: none;
+    padding: 12px 24px;
+    position: relative;
 }
 
 /* Botones con iconos */
@@ -99,6 +125,10 @@ nav ul li a:hover {
     border-radius: 50%;
     cursor: pointer;
     position: relative;
+}
+
+.icon-button svg {
+    stroke: var(--text-color);
 }
 
 .icon-button:hover {
@@ -154,13 +184,14 @@ main {
     padding: 1.5rem;
     overflow-y: auto;
     transition: transform 0.3s ease;
-    z-index: 50;
+    z-index: 90;
 }
 
 .sidebar-content {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    padding-top: 1rem;
 }
 
 .sidebar-section {
@@ -175,6 +206,12 @@ main {
 }
 
 /* Componentes del sidebar */
+.categories {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
 .category-button {
     display: flex;
     align-items: center;
@@ -186,6 +223,12 @@ main {
     border-radius: 0.5rem;
     cursor: pointer;
     color: var(--text-color);
+    transition: background-color 0.2s ease;
+}
+
+.category-button svg {
+    stroke: var(--text-color);
+    stroke-width: 2;
 }
 
 .category-button:hover {
@@ -214,6 +257,7 @@ main {
     display: flex;
     justify-content: space-between;
     margin-top: 0.5rem;
+    color: var(--text-color);
 }
 
 .author-search {
@@ -223,15 +267,13 @@ main {
 .author-search input {
     width: 100%;
     padding: 0.5rem 2rem 0.5rem 0.5rem;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--border-color);
     border-radius: 0.5rem;
 }
 
-.search-icon {
-    position: absolute;
-    right: 0.5rem;
-    top: 50%;
-    transform: translateY(-50%);
+.author-search input:focus {
+    outline: none;
+    border-color: var(--primary-color);
 }
 
 .rating-buttons {
@@ -244,15 +286,34 @@ main {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    width: 100%;
     padding: 0.5rem;
     background: none;
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
 .rating-button:hover {
     background-color: var(--background-color);
+}
+
+.stars {
+    display: flex;
+    gap: 2px;
+}
+
+.star {
+    flex-shrink: 0;
+    fill: var(--primary-color);
+    stroke: var(--primary-color);
+    stroke-width: 2;
+}
+
+.rating-button span {
+    color: var(--text-color);
+    font-size: 0.875rem;
 }
 
 /* Overlay móvil */
@@ -290,6 +351,11 @@ main {
     background-color: var(--background-color);
 }
 
+.close-sidebar svg {
+    stroke: var(--text-color);
+    stroke-width: 2;
+}
+
 /* Media Queries */
 @media (min-width: 768px) {
     main {
@@ -312,6 +378,10 @@ main {
     .mobile-search-btn {
         display: none;
     }
+
+    .menu-button {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
@@ -319,12 +389,12 @@ main {
         display: none;
     }
 
-    .search-container {
-        display: none;
+    .menu-button {
+        display: flex;
     }
 
-    .mobile-search {
-        padding: 12px 24px;
+    .search-container {
+        display: none;
     }
 
     .mobile-search.active {
