@@ -472,6 +472,122 @@ main {
 .collection-button:hover {
     background-color: rgba(255, 255, 255, 0.3);
 }
+/*Club*/
+.book-club-banner {
+    position: relative;
+    margin: 4rem 0;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+}
+
+.banner-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.1;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: 30px 30px;
+}
+
+.banner-content {
+    position: relative;
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.banner-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.banner-header h2 {
+    font-size: 2.25rem;
+    font-family: serif;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.banner-header p {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 42rem;
+    margin: 0 auto;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.benefit-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    color: white;
+    transition: background-color 0.2s ease;
+}
+
+.benefit-card:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.benefit-card svg {
+    margin-bottom: 1rem;
+    stroke: currentColor;
+}
+
+.benefit-card h3 {
+    font-family: serif;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+.benefit-card p {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.banner-footer {
+    text-align: center;
+}
+
+.join-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: white;
+    color: var(--secondary-color);
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.join-button:hover {
+    background-color: var(--background-color);
+}
+
+.join-button svg {
+    stroke: currentColor;
+}
+
+.sign-in-text {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.sign-in-text a {
+    color: white;
+    text-decoration: underline;
+}
+
 /* Media Queries */
 @media (min-width: 768px) {
     main {
@@ -509,6 +625,17 @@ main {
 
     .collection-info h3 {
         font-size: 1.5rem;
+    }
+    .banner-content {
+        padding: 3rem;
+    }
+
+    .banner-header h2 {
+        font-size: 2.5rem;
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -604,5 +731,15 @@ main {
         padding: 0.5rem;
         margin-top: 0.5rem;
         font-size: 0.813rem;
+    }
+}
+/*Desktop*/
+@media (min-width: 1024px) {
+    .banner-content {
+        padding: 4rem;
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
