@@ -40,4 +40,21 @@
         <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2"/>
         <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2"/>
     </symbol>
+
+    <!-- Premio (Award) -->
+    <symbol id="award" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="8" r="7" stroke="currentColor" stroke-width="2"/>
+        <path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+
+    <!-- Destellos (Sparkles) -->
+    <symbol id="sparkles" viewBox="0 0 24 24" fill="none">
+        <path d="M12 3l1.88 5.79h6.08l-4.91 3.57 1.88 5.79-4.93-3.58-4.92 3.58 1.88-5.79-4.91-3.57h6.08z" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+
+    <!-- Reloj (Clock) -->
+    <symbol id="clock" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+        <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2"/>
+    </symbol>
 </svg>
