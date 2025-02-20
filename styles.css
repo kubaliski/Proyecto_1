@@ -19,13 +19,14 @@
     min-height: 100vh;
 }
 
-/* Estilos para el header */
+/* Estilos base del header */
 header {
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
-/* Contenedor principal de la navbar */
+/* Estilos base de la navbar */
 .navbar {
     max-width: 1440px;
     margin: 0 auto;
@@ -40,22 +41,10 @@ header {
 .left-part {
     display: flex;
     align-items: center;
-    gap: 48px;
+    gap: 24px;
 }
 
-.menu-button {
-    padding: 8px;
-    background: none;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    display: none;
-}
-
-.menu-button:hover {
-    background-color: var(--background-color);
-}
-
+/* Logo */
 .logo {
     font-size: 24px;
     font-family: serif;
@@ -63,6 +52,7 @@ header {
     color: var(--primary-color);
 }
 
+/* Navegación */
 nav ul {
     display: flex;
     gap: 24px;
@@ -72,10 +62,24 @@ nav ul {
 nav ul li a {
     color: var(--text-color);
     text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
 }
 
 nav ul li a:hover {
     color: var(--primary-color);
+    background-color: var(--background-color);
+}
+
+/* Botón de menú */
+.menu-button {
+    display: none;
+    padding: 8px;
+    background: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 /* Sección derecha y búsqueda */
@@ -97,11 +101,6 @@ nav ul li a:hover {
     border-radius: 8px;
 }
 
-.search-input:focus {
-    outline: none;
-    border-color: var(--primary-color);
-}
-
 .search-icon {
     position: absolute;
     right: 8px;
@@ -109,12 +108,6 @@ nav ul li a:hover {
     transform: translateY(-50%);
     stroke: #9CA3AF;
     pointer-events: none;
-}
-
-.mobile-search {
-    display: none;
-    padding: 12px 24px;
-    position: relative;
 }
 
 /* Botones con iconos */
@@ -131,10 +124,6 @@ nav ul li a:hover {
     stroke: var(--text-color);
 }
 
-.icon-button:hover {
-    background-color: var(--background-color);
-}
-
 .cart-count {
     position: absolute;
     top: -4px;
@@ -149,6 +138,7 @@ nav ul li a:hover {
     align-items: center;
     justify-content: center;
 }
+
 
 /* Contenedor principal y sidebar */
 .main-container {
@@ -316,21 +306,7 @@ main {
     font-size: 0.875rem;
 }
 
-/* Overlay móvil */
-.mobile-overlay {
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    z-index: 40;
-}
 
-.mobile-overlay.active {
-    opacity: 1;
-    pointer-events: auto;
-}
 
 /* Botón cerrar sidebar */
 .close-sidebar {
@@ -1009,128 +985,8 @@ main {
 }
 
 /* Media Queries */
-@media (min-width: 768px) {
-    main {
-        max-width: 80%;
-        padding: 1.5rem 2rem;
-    }
 
-    .sidebar {
-        width: 20%;
-        position: sticky;
-        right: 0;
-        transform: none;
-        display: block;
-    }
-
-    .close-sidebar {
-        display: none;
-    }
-
-    .mobile-search-btn {
-        display: none;
-    }
-
-    .menu-button {
-        display: none;
-    }
-
-    .collections-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .collection-content {
-        padding: 2rem;
-    }
-
-    .collection-info h3 {
-        font-size: 1.5rem;
-    }
-    .banner-content {
-        padding: 3rem;
-    }
-
-    .banner-header h2 {
-        font-size: 2.5rem;
-    }
-
-    .benefits-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .newsletter-form {
-        flex-direction: row;
-    }
-
-    .newsletter-form input {
-        flex: 1;
-    }
-
-    .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    nav ul {
-        display: none;
-    }
-
-    .menu-button {
-        display: flex;
-    }
-
-    .search-container {
-        display: none;
-    }
-
-    .mobile-search.active {
-        display: block;
-    }
-
-    .mobile-search .search-input {
-        width: 100%;
-    }
-
-    .mobile-search-btn {
-        display: block;
-    }
-
-    .sidebar.active {
-        transform: translateX(0);
-    }
-
-    .collections-showcase {
-        padding: 0 1rem;
-    }
-
-    .collection-card {
-        min-height: 280px;
-    }
-
-    .collection-content {
-        padding: 1rem;
-    }
-
-    .collection-badge {
-        font-size: 0.875rem;
-    }
-
-    .collection-info h3 {
-        font-size: 1.125rem;
-    }
-
-    .collection-author,
-    .collection-description {
-        font-size: 0.813rem;
-    }
-
-    .collection-button {
-        padding: 0.75rem;
-        font-size: 0.875rem;
-    }
-}
-
-/* Añadimos un breakpoint adicional para pantallas más pequeñas */
+/* Mobile First - Pequeñas pantallas (hasta 480px) */
 @media (max-width: 480px) {
     .collection-card {
         min-height: 250px;
@@ -1163,18 +1019,227 @@ main {
         margin-top: 0.5rem;
         font-size: 0.813rem;
     }
+
+    /* Newsletter */
+    .newsletter-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .newsletter-update {
+        font-size: 1rem;
+    }
+
+    .newsletter-terms {
+        font-size: 0.2rem;
+    }
+
+    /* Footer */
+    .footer-column {
+        text-align: center;
+    }
+
+    .footer-column ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
 }
-/*Desktop*/
+
+/* Movil (hasta 768px) */
+@media (max-width: 768px) {
+    /* Header fijo en móvil */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .menu-button {
+        display: flex;
+    }
+
+    .search-container {
+        display: none;
+    }
+
+    .collections-showcase {
+        margin-top: 5rem;
+    }
+
+    .collection-card {
+        min-height: 280px;
+    }
+
+    .collection-content {
+        padding: 1rem;
+    }
+
+    .collection-badge {
+        font-size: 0.875rem;
+    }
+
+    .collection-info h3 {
+        font-size: 1.125rem;
+    }
+
+    .collection-author,
+    .collection-description {
+        font-size: 0.813rem;
+    }
+
+    .collection-button {
+        padding: 0.75rem;
+        font-size: 0.875rem;
+    }
+
+    .sorting-controls h1 {
+        font-size: 1.2rem;
+    }
+    .newsletter-content .newsletter-update {
+        font-size: 0.9rem;
+    }
+    .newsletter-content .newsletter-terms {
+        font-size: 0.7rem;
+    }
+    .footer .footer-column p {
+        font-size: 0.7rem;
+    }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    main {
+        max-width: 100%;
+        padding: 1.5rem 2rem;
+    }
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .menu-button {
+        display: flex;
+    }
+
+    .search-container {
+        display: none;
+    }
+    .sidebar {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .collections-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .collection-content {
+        padding: 2rem;
+    }
+
+    .collection-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .conllection-description {
+        display: none;
+    }
+    .book-description{
+        display: none;
+    }
+    .banner-content {
+        padding: 3rem;
+    }
+
+    .banner-header h2 {
+        font-size: 2.5rem;
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .newsletter-form {
+        flex-direction: row;
+    }
+
+    .newsletter-form input {
+        flex: 1;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .books-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop (1024px y superior) */
 @media (min-width: 1024px) {
+    main {
+        max-width: 80%;
+        padding: 1.5rem 2rem;
+    }
+
+    .sidebar {
+        width: 20%;
+        position: sticky;
+        right: 0;
+        transform: none;
+        display: block;
+    }
+
+    .close-sidebar {
+        display: none;
+    }
+
+    .mobile-search-btn {
+        display: none;
+    }
+
+    .menu-button {
+        display: none;
+    }
+
+    .collections-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     .banner-content {
         padding: 4rem;
     }
+
     .books-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+
     .benefits-grid {
         grid-template-columns: repeat(4, 1fr);
     }
+
     .footer-grid {
         grid-template-columns: repeat(4, 1fr);
     }

@@ -9,21 +9,13 @@
 <body>
     <div class="layout">
         <header>
-            <div class="mobile-search">
-                <div class="search-container">
-                    <input type="text" placeholder="Encuentra tu libro..." class="search-input">
-                    <svg class="search-icon" width="20" height="20">
-                        <use href="assets/iconos.svg#search"/>
-                    </svg>
-                </div>
-            </div>
             <div class="navbar">
                 <div class="left-part">
-                    <button class="menu-button">
+                    <label for="nav-toggle" class="menu-button">
                         <svg width="24" height="24">
                             <use href="assets/iconos.svg#menu"/>
                         </svg>
-                    </button>
+                    </label>
                     <a href="/" class="logo">Librería</a>
                     <nav>
                         <ul>
@@ -33,12 +25,13 @@
                         </ul>
                     </nav>
                 </div>
+
                 <div class="right-section">
-                    <button class="icon-button mobile-search-btn">
+                    <label for="search-toggle" class="icon-button mobile-search-btn">
                         <svg width="20" height="20">
                             <use href="assets/iconos.svg#search"/>
                         </svg>
-                    </button>
+                    </label>
                     <div class="search-container">
                         <input type="text" placeholder="Encuentra tu libro..." class="search-input">
                         <svg class="search-icon" width="20" height="20">
@@ -169,7 +162,7 @@
                                     </div>
                                 </div>
                                 <div class="book-content">
-                                    <h3 class="book-title">El Laberinto de los Espíritus</h3>
+                                    <h3 class="book-title">El Laberinto </h3>
                                     <p class="book-author">Carlos Ruiz Zafón</p>
                                     <p class="book-description">En la Barcelona de los años 50, Daniel Sempere y su amigo Fermín se embarcan en una nueva aventura para resolver el mayor misterio de la saga del Cementerio de los Libros Olvidados.</p>
                                     <div class="book-details">
@@ -281,7 +274,7 @@
 
                             <article class="book-card">
                                 <div class="book-image-container">
-                                    <img src="assets/libro_4.jpg" alt="Memorias de Medianoche" class="book-image">
+                                    <img src="assets/libro_4.jpg" alt="Memorias de Medianoche Vol.1" class="book-image">
                                     <div class="image-overlay">
                                         <svg width="24" height="24" class="eye-icon">
                                             <use href="assets/iconos.svg#eye"/>
@@ -289,7 +282,7 @@
                                     </div>
                                 </div>
                                 <div class="book-content">
-                                    <h3 class="book-title">Memorias de Medianoche</h3>
+                                    <h3 class="book-title">Memorias de Medianoche Vol.1</h3>
                                     <p class="book-author">Javier Sierra</p>
                                     <p class="book-description">Un periodista investiga una serie de misteriosas desapariciones relacionadas con un antiguo monasterio en los Pirineos, donde el tiempo parece haberse detenido.</p>
                                     <div class="book-details">
@@ -731,14 +724,14 @@
                 </div>
             </aside>
 
-            <div class="mobile-overlay"></div>
+
         </div>
         <!--Newsletter-->
         <section class="newsletter-section">
             <div class="newsletter-container">
                 <div class="newsletter-content">
-                    <h2>Suscríbete a Nuestro Newsletter</h2>
-                    <p>Mantente actualizado con nuevos lanzamientos, entrevistas con autores y ofertas exclusivas. ¡Únete a nuestra comunidad de amantes de los libros hoy!</p>
+                    <h2>Suscríbete a Nuestra Newsletter</h2>
+                    <p class="newsletter-update">Mantente actualizado con nuevos lanzamientos, entrevistas con autores y ofertas exclusivas. ¡Únete a nuestra comunidad de amantes de los libros hoy!</p>
                     <form class="newsletter-form">
                         <input type="email" placeholder="Ingresa tu email" required>
                         <button type="submit">
@@ -814,7 +807,7 @@
                                 </svg>
                             </a>
                         </div>
-                        <p>Suscríbete a nuestro newsletter para recibir ofertas especiales y recomendaciones de libros.</p>
+                        <p>Suscríbete a nuestra newsletter para recibir ofertas especiales y recomendaciones de libros.</p>
                     </div>
                 </div>
 
