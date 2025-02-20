@@ -387,15 +387,17 @@ main {
 }
 
 .collection-overlay {
+    z-index: 10; /* Tiene que estar encima de la carta */
     position: absolute;
     inset: 0;
-    opacity: 1;/*ESTA EN EL OVERLAY NO TE OLVIDES*/
+    opacity: 0.80;
     mix-blend-mode: multiply;
     transition: opacity 0.3s ease;
 }
 
+
 .collection-card:hover .collection-overlay {
-    opacity: 0.85;
+    opacity: 0.65;
 }
 
 .collection-gradient {
@@ -408,6 +410,7 @@ main {
     object-fit: cover;
     opacity: 0.9; /* Aumentamos la opacidad de la imagen */
     transition: transform 0.3s ease;
+    z-index: 0;
 }
 
 .collection-card:hover .collection-image {
@@ -416,6 +419,7 @@ main {
 }
 
 .collection-content {
+    z-index: 20; /* Tiene que estar encima del overlay aunque no tenga sentido semanticamente */
     position: absolute;
     inset: 0;
     padding: 1.5rem;
@@ -879,6 +883,19 @@ main {
     transform: scale(0.8);
     transition: transform 0.3s ease;
 }
+.eye-icon {
+    stroke: white;
+    width: 32px;
+    height: 32px;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+    color: white !important; /* Forzamos el color blanco */
+}
+
+.eye-icon use {
+    stroke: inherit;
+    color: white !important;
+}
 
 .book-content {
     padding: 1rem;
@@ -907,7 +924,7 @@ main {
 
 .book-author {
     font-size: 0.875rem;
-    color: var(--text-color);
+    color: var(--primary-color);
     opacity: 0.8;
     margin-bottom: 0.5rem;
 }
@@ -930,7 +947,32 @@ main {
     font-weight: 600;
     color: var(--primary-color);
 }
+/*Libro en oferta*/
+.price-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
 
+.original-price {
+    color: var(--text-color);
+    opacity: 0.7;
+    font-weight: normal;
+}
+
+.new-price {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.discount-badge {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
 .book-rating {
     display: flex;
     align-items: center;
