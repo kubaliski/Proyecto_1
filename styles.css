@@ -752,6 +752,219 @@ main {
     font-size: 0.875rem;
     color: rgba(255, 255, 255, 0.6);
 }
+/* Sección de libros */
+.books-section {
+    margin-top: 2rem;
+}
+
+/* Controles de ordenamiento */
+.sorting-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sorting-controls h1 {
+    font-size: 1.875rem;
+    font-family: serif;
+    color: var(--text-color);
+}
+
+.sort-select {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    background-color: white;
+}
+
+/* Filtros activos */
+.active-filters {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.filter-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.75rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.filter-tag svg {
+    stroke: currentColor;
+}
+
+.clear-filters {
+    font-size: 0.875rem;
+    color: var(--primary-color);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.clear-filters:hover {
+    text-decoration: underline;
+}
+
+/* Grid de libros */
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Tarjeta de libro */
+.book-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.book-card:hover .image-overlay {
+    opacity: 1;
+}
+
+.book-card:hover .eye-icon {
+    transform: scale(1);
+}
+
+.book-card:hover .book-image {
+    transform: scale(1.05);
+}
+
+.book-image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.book-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.eye-icon {
+    stroke: white;
+    width: 32px;
+    height: 32px;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.book-content {
+    padding: 1rem;
+}
+.buy-button {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.buy-button:hover {
+    background-color: #721835; /* Un tono más oscuro del color primario */
+}
+.book-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+}
+
+.book-author {
+    font-size: 0.875rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+}
+
+.book-description {
+    font-size: 0.875rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.book-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.book-price {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.book-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+.stars-container {
+    display: flex;
+    gap: 2px;
+}
+
+.book-rating .star {
+    color: var(--primary-color);
+}
+
+.book-rating .star.filled {
+    fill: var(--primary-color);
+}
+
+.book-rating .star.empty {
+    fill: none;
+    stroke: currentColor;
+    color: var(--primary-color);
+}
+
+/* Asegúrate de que el SVG herede los colores correctamente */
+.book-rating .star.empty use {
+    stroke: inherit;
+    color: inherit;
+}
+
+.book-rating span {
+    font-size: 0.875rem;
+    color: var(--text-color);
+}
 
 /* Media Queries */
 @media (min-width: 768px) {
@@ -914,7 +1127,9 @@ main {
     .banner-content {
         padding: 4rem;
     }
-
+    .books-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
     .benefits-grid {
         grid-template-columns: repeat(4, 1fr);
     }
