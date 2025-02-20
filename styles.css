@@ -102,6 +102,11 @@ nav ul li a:hover {
     border-radius: 8px;
 }
 
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
 .search-icon {
     position: absolute;
     right: 8px;
